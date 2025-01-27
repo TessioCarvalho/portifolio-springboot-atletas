@@ -20,12 +20,12 @@ public class Athlete {
 	private String email;
 	private String team;
 	private Float weight;
-	private Integer phone;
+	private String phone;
 	private Integer age;
 	
 	public Athlete() {}
 
-	public Athlete(Integer id, String name, String cpf, String email, String team, Float weight, Integer phone, Integer age) {
+	public Athlete(Integer id, String name, String cpf, String email, String team, Float weight, String phone, Integer age) {
 		this.id = id;
 		this.name = name;
 		this.cpf = cpf;
@@ -84,11 +84,11 @@ public class Athlete {
 		this.weight = weight;
 	}
 
-	public Integer getPhone() {
+	public String getPhone() {
 		return phone;
 	}
 
-	public void setPhone(Integer phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 
