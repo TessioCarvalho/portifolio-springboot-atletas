@@ -12,6 +12,9 @@ public class AdultCategory {
 	private String superHeavy;
 	private String ultraHeavy;
 	private String openClass;
+	
+	public AdultCategory() {}
+	
 	public String getRooster() {
 		return rooster;
 	}
