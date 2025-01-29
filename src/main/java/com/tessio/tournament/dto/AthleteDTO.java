@@ -6,14 +6,12 @@ public class AthleteDTO {
 	
 	private String name;
 	private String team;
-	private Float weight;
 	
 	public AthleteDTO() {}
 	
 	public AthleteDTO(Athlete entity) {
 		name = entity.getName();
 		team = entity.getTeam();
-		weight = entity.getWeight();
 	}
 
 	public String getName() {
@@ -24,8 +22,4 @@ public class AthleteDTO {
 		return team;
 	}
 
-	public Float getWeight() {
-		return weight;
-	}
-		
 }
