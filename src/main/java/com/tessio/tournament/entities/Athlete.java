@@ -19,13 +19,14 @@ public class Athlete {
 	private String cpf;
 	private String email;
 	private String team;
-	private Float weight;
+	private Double weight;
 	private String phone;
 	private Integer age;
+//	private String genre;
 	
 	public Athlete() {}
 
-	public Athlete(Integer id, String name, String cpf, String email, String team, Float weight, String phone, Integer age) {
+	public Athlete(Integer id, String name, String cpf, String email, String team, Double weight, String phone, Integer age) {
 		this.id = id;
 		this.name = name;
 		this.cpf = cpf;
@@ -76,11 +77,11 @@ public class Athlete {
 		this.team = team;
 	}
 
-	public Float getWeight() {
+	public Double getWeight() {
 		return weight;
 	}
 
-	public void setWeight(Float weight) {
+	public void setWeight(Double weight) {
 		this.weight = weight;
 	}
 
