@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tessio.tournament.dto.AthleteAgeDTO;
-import com.tessio.tournament.dto.AthleteDTO;
+import com.tessio.tournament.dto.ShowAthleteDTO;
 import com.tessio.tournament.dto.HeavyWeightDTO;
 import com.tessio.tournament.services.AthleteService;
 
@@ -21,8 +21,8 @@ public class AthleteController {
 	private AthleteService athleteService;
 	
 	@GetMapping
-	public List<AthleteDTO> findAll(){
-		List<AthleteDTO> result = athleteService.findAll();
+	public List<ShowAthleteDTO> findAll(){
+		List<ShowAthleteDTO> result = athleteService.findAll();
 		return result;
 	}
 	

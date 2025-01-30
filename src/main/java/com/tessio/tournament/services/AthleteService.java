@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.tessio.tournament.dto.AthleteAgeDTO;
-import com.tessio.tournament.dto.AthleteDTO;
+import com.tessio.tournament.dto.ShowAthleteDTO;
 import com.tessio.tournament.dto.HeavyWeightDTO;
 import com.tessio.tournament.entities.Athlete;
 import com.tessio.tournament.repositories.AthleteRepository;
@@ -19,9 +19,9 @@ public class AthleteService {
 	private AthleteRepository athleteRepository;
 	
 	@Transactional(readOnly = true)
-	public List<AthleteDTO> findAll(){
+	public List<ShowAthleteDTO> findAll(){
 		List<Athlete> result = athleteRepository.findAll();
-		return result.stream().map(x -> new AthleteDTO(x)).toList();
+		return result.stream().map(x -> new ShowAthleteDTO(x)).toList();
 	}
 	
 	@Transactional(readOnly = true)
