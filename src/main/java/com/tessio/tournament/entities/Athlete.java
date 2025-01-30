@@ -22,11 +22,12 @@ public class Athlete {
 	private Double weight;
 	private String phone;
 	private Integer age;
-//	private String genre;
+	private String gender;
 	
 	public Athlete() {}
 
-	public Athlete(Integer id, String name, String cpf, String email, String team, Double weight, String phone, Integer age) {
+	public Athlete(Integer id, String name, String cpf, String email, String team, Double weight, 
+			String phone, Integer age, String gender) {
 		this.id = id;
 		this.name = name;
 		this.cpf = cpf;
@@ -35,6 +36,7 @@ public class Athlete {
 		this.weight = weight;
 		this.phone = phone;
 		this.age = age;
+		this.gender = gender;
 	}
 	
 	public Integer getId() {
@@ -101,6 +103,14 @@ public class Athlete {
 		this.age = age;
 	}
 
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -117,7 +127,5 @@ public class Athlete {
 		Athlete other = (Athlete) obj;
 		return Objects.equals(id, other.id);
 	}
-	
-	
-	
+
 }
