@@ -35,5 +35,9 @@ public class AthleteService {
         List<Athlete> result = athleteRepository.findByAgeBetween(ageMin, ageMax);
         return result.stream().map(x -> new AthleteAgeDTO(x)).toList();
     }	
-		
+	
+	@Transactional
+	public Athlete addAthlete(Athlete athlete) {
+		return athleteRepository.save(athlete);
+	}
 }
