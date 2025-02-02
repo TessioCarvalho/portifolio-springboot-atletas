@@ -3,12 +3,18 @@ package com.tessio.tournament.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 import com.tessio.tournament.dto.AthleteAgeDTO;
 import com.tessio.tournament.dto.HeavyWeightDTO;
@@ -44,6 +50,16 @@ public class AthleteController {
 	@PostMapping
 	public Athlete addAthlete(@RequestBody Athlete athlete) {
 		return athleteService.addAthlete(athlete);
+	}
+	
+	@DeleteMapping("/delete/{id}")
+	public ResponseEntity<Void> deleteAthlete(@PathVariable Integer id) {
+		try {
+            athleteService.deleteAthlete(id);
+            return ResponseEntity.noContent().build();
+        } catch (EmptyResultDataAccessException e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Atleta não encontrado");
+        }
 	}
 	
 }
