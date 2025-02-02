@@ -40,4 +40,10 @@ public class AthleteService {
 	public Athlete addAthlete(Athlete athlete) {
 		return athleteRepository.save(athlete);
 	}
+	
+	@Transactional
+	public void deleteAthlete(Integer id) {
+	    athleteRepository.deleteById(id);
+	}
+	
 }
